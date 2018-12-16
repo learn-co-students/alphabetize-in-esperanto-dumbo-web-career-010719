@@ -1,12 +1,9 @@
 def alphabetize(arr)
-    # code here
-    arr.sort_by! do |a|
-        positions = []
+    esperanto_alphabet = ["a", "b", "c", "ĉ", "d", "e", "f", "g", "ĝ", "h", "ĥ", "i", "j", "ĵ", "k", "l", "m", "n", "o", "p", "r", "s", "ŝ", "t", "u", "ŭ", "v", "z"]
 
-        a.each_char do |char|
-            positions << ESPERANTO_ALPHABET.index(char)
+    arr.sort_by do |word|
+        word.split('').collect do |letter|
+            esperanto_alphabet.index(letter)
         end
-        positions
     end
-    arr
 end
